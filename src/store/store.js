@@ -1,3 +1,4 @@
+/* eslint-disable arrow-parens */
 /* eslint-disable import/prefer-default-export */
 import Vue from 'vue';
 import Vuex from 'vuex';
@@ -11,5 +12,13 @@ export const store = new Vuex.Store({
   getters: {
     doubleCounter: state => state.counter * 2,
     clickCounter: state => `${state.counter} clicks`,
+  },
+  mutations: {
+    increment: state => {
+      state.counter += 1;
+    },
+    decrement: state => {
+      state.counter -= 1;
+    },
   },
 });
