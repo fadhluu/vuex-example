@@ -1,15 +1,16 @@
 <template>
   <div class="form-group">
-    <p>Counter: {{ counter }}</p>
+    <p>Counter: {{ doubleCounter }}</p>
+    <p>Number of click: {{ clickCounter }}</p>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   computed: {
-    counter() {
-      return this.$store.state.counter;
-    },
+    ...mapGetters(['doubleCounter', 'clickCounter']),
   },
 };
 </script>
