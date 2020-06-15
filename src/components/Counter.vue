@@ -3,6 +3,9 @@
     <div class="form-group">
       <button class="btn btn-primary" @click="increment(100)">Increase</button>
       <button class="btn btn-warning" @click="decrement(100)">Decrease</button>
+      <button class="btn btn-danger" @click="resetCounter">
+        Reset
+      </button>
     </div>
     <div class="form-group">
       <button
@@ -31,6 +34,7 @@ export default {
       'decrement',
       'asyncIncrement',
       'asyncDecrement',
+      'resetCounter',
     ]),
     increment(by) {
       this.$store.dispatch('increment', by);

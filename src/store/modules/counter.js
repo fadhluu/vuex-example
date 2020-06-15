@@ -16,6 +16,9 @@ const mutations = {
   decrement: (state, payload) => {
     state.counter -= payload;
   },
+  resetCounter: state => {
+    state.counter = 0;
+  },
 };
 
 const actions = {
@@ -34,6 +37,9 @@ const actions = {
     setTimeout(() => {
       commit('decrement', payload.by);
     }, payload.duration);
+  },
+  resetCounter: ({ commit }) => {
+    commit('resetCounter');
   },
 };
 
