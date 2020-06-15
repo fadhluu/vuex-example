@@ -11,10 +11,14 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import * as types from '../store/types';
 
 export default {
   computed: {
-    ...mapGetters(['doubleCounter', 'clickCounter']),
+    ...mapGetters({
+      clickCounter: [types.CLICK_COUNTER],
+      doubleCounter: [types.DOUBLE_COUNTER],
+    }),
     value: {
       get() {
         return this.$store.getters.value;
